@@ -14,22 +14,16 @@ You will need to clone the source code of project GitHub repository.
 
 After the repository is cloned, go inside of the repository directory and install dependencies:
 
-Prerequisits 
---
-Install VS code 
-https://code.visualstudio.com/download
---
+#Prerequisites 
+```
+install VS code https://code.visualstudio.com/download
 
--- 
 install Node from
 https://nodejs.org/en/download/
 
 install Angular-cli
 npm install -g @angular/cli
 
---
-
-```
 cd dashboardproject
 npm install
 npm start
