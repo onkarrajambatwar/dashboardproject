@@ -4,7 +4,7 @@ import { AppRegistrationComponent } from './components/app-registration/app-regi
 export const appRoutes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'app-registration',
         pathMatch: 'full'
     },
     {
