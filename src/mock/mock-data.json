@@ -1,0 +1,218 @@
+{
+
+  "RegisterNewApplication": {
+	"Request": {
+		"ApplicationType":"LDAP",
+		"ApplicationName":"LDAPInstance2",
+		"ApplicationDetails": {
+
+			"hostname":"localhost",
+
+			"port":"3060",
+
+			"serviceid":"cn=Directory Manager",
+
+			"password":"Password1",
+
+			"Implemented Class":"com.kp.LDAPInterface"
+
+		},
+		"OAuthDetails":{
+
+			"OAuthType":"KPOAUTH",
+
+			"adminID":"MyAdminUser",
+
+			"adminPassword":"Oracle123"
+
+
+
+		}
+  },
+  "Response" :{
+		"status": "success",
+		"message": "Successfully registered application",
+		"SCIMURL": "http://scimhost:9090/scimgateway/943ODA6G",
+		"ApplicationID": "943ODA6G",
+		"APIToken": "R9lDEW5dnN6TZg2sefEEzS6LWMNmFh4iLHMu47LmAsusHl0bZuh2rktSlXqSZRdHHEWq7sP4Xsdy6xNtDYE8xw=="
+	}
+},
+
+"GetAllApplications":{
+	"Response" :{
+		"status": "success",
+		"message": "Successfully reterived all registered applications",
+		"Applications": [
+			{
+				"ApplicationID": "74382DOD",
+				"ApplicationName": "OIMInstance2",
+				"ApplicationType": "OIM",
+				"APIToken": "ZM8R4FRiZWWKbl235u06zbArCdOBPlEKhqHQO8Y9RJ2HgBPC+cZgbIli8fFuNZaey/2tJciJuILIWIn24WTjGA=="
+			},
+			{
+				"ApplicationID": "943ODA6G",
+				"ApplicationName": "LDAPInstance2",
+				"ApplicationType": "LDAP",
+				"APIToken": "R9lDEW5dnN6TZg2sefEEzS6LWMNmFh4iLHMu47LmAsusHl0bZuh2rktSlXqSZRdHHEWq7sP4Xsdy6xNtDYE8xw=="
+			}
+		]
+	}
+},
+
+"GetApplicationDetails": {
+	"Request" :{
+
+	  "APIToken":"R9lDEW5dnN6TZg2sefEEzS6LWMNmFh4iLHMu47LmAsusHl0bZuh2rktSlXqSZRdHHEWq7sP4Xsdy6xNtDYE8xw=="
+
+	},
+	"Response" :{
+
+		"status": "success",
+
+		"message": "Successfully reterived registered application",
+
+		"Application": {
+
+			"ApplicationID": "923244EB",
+
+			"ApplicationName": "LDAPInstance3",
+
+			"ApplicationType": "LDAP",
+
+			"ApplicationDetails": {
+
+				"hostname": "localhost3",
+
+				"port": "3060",
+
+				"serviceid": "cn=Directory Manager3",
+
+				"password": "Password13",
+
+				"Implemented Class": "com.kp.LDAPInterface"
+
+			},
+
+			"ApplicationAlias": "33SI180HOG",
+
+			"SCIMURL": "http://scimhost:9090/scimgateway/923244EB",
+
+			"RefreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJLUCBTQ0lNR2F0ZXdheSIsImF1ZCI6IkxEQVBJbnN0YW5jZTMiLCJpYXQiOjE1NDU4NDQwMzksImV4cCI6MTU0ODQzNjAzOSwiaW5mbyI6eyJ0eXBlIjoiS1BPQVVUSCIsImNsaWVudElEIjoidW4wZnhudTY4NHZqbWNlMDRkcXgwNHdvajJ5dWRmbnoiLCJ1c2VybmFtZSI6IlRlc3RBZG1pbiJ9fQ.MUp_NFK6jPg3bizPGyhjFnjvxDy6YXG0WaKLMhU0T_E",
+
+			"RefreshTokenExpiry": "01/25/2019 11:07:19",
+
+			"OAuthDetails": {
+
+				"OAuthType": "KPOAUTH",
+
+				"adminID": "TestAdmin",
+
+				"adminPassword": "IXm&7iVfPt",
+
+				"clientID": "un0fxnu684vjmce04dqx04woj2yudfnz",
+
+				"clientSecret": "7ded5a14-f0fd-45c2-b491-feb4f35a0f70"
+
+			}
+
+		}
+
+  }
+},
+
+"RegenerateNewAPIToken":{
+	"Request":
+	{
+
+		"OldAPIToken":"R9lDEW5dnN6TZg2sefEEzS6LWMNmFh4iLHMu47LmAsusHl0bZuh2rktSlXqSZRdHHEWq7sP4Xsdy6xNtDYE8xw=="
+
+	},
+"Response":
+	{
+
+		"status": "success",
+
+		"message": "Successfully reterived registered application",
+
+		"ApplicationID": "943ODA6G",
+
+		"OldAPIToken": "JLxQflyvgYhpUo8+An+UCr1wV1xZ+mtIaKIEursGYA0HxUVYIREBKr1JWGJSF0lhkA/zwos90RZqBIPKiaEYSw==",
+
+		"NewAPIToken": "FJddYTXUY03RZ2n5MJ5JV18DggZT30NuYv/cFFramSoBu9JofB/JS99XzEed8lbETD/Un2Cy7ECzgUVjApPatA=="
+
+  }
+},
+
+"UpdateApplicationDetail":{
+	"Request":{
+
+	"OldAPIToken":"R9lDEW5dnN6TZg2sefEEzS6LWMNmFh4iLHMu47LmAsusHl0bZuh2rktSlXqSZRdHHEWq7sP4Xsdy6xNtDYE8xw==",
+
+	"ApplicationDetails": {
+
+				"hostname": "MyNewLocalHost",
+
+				"port": "3060",
+
+				"serviceid": "cn=Directory Manager",
+
+				"password": "Password123",
+
+				"Implemented Class": "com.kp.LDAPInterface"
+
+			}
+
+	},
+	"Response" :{
+
+		"status": "success",
+
+		"message": "Successfully updated registered application",
+
+		"Application": {
+
+			"ApplicationID": "943ODA6G",
+
+			"ApplicationName": "LDAPInstance2",
+
+			"ApplicationType": "LDAP",
+
+			"ApplicationDetails": {
+
+				"hostname": "MyNewLocalHost",
+
+				"port": "3060",
+
+				"serviceid": "cn=Directory Manager",
+
+				"password": "Password123",
+
+				"Implemented Class": "com.kp.LDAPInterface"
+
+			},
+
+			"ApplicationAlias": "9348NDMSWC",
+
+			"SCIMURL": "http://scimhost:9090/scimgateway/943ODA6G",
+
+			"RefreshToken": "eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJLUCBTQ0lNR2F0ZXdheSIsImF1ZCI6IkxEQVBJbnN0YW5jZTIiLCJpYXQiOjE1NDU4MTQ4MTcsImV4cCI6MTU0ODQwNjgxNywiaW5mbyI6eyJ0eXBlIjoiS1BPQVVUSCIsImNsaWVudElEIjoienRzZ2F1OXpqZm9oMTk3NW9iejh5ODFvNjVheWFxeWciLCJ1c2VybmFtZSI6Ik15QWRtaW5Vc2VyIn19.mo8y_QN2e9o1D6nhhGcjFkVk7c7NRSnC8LiWnD1RI1Q",
+
+			"RefreshTokenExpiry": "01/25/2019 03:00:17"
+
+		}
+
+  }
+},
+
+"GetNewClientSecret":{
+"Request":{
+	"clientID":"ztsgau9zjfoh1975obz8y81o65ayaqyg"
+	},
+	"Response":{
+		"ApplicationID": "943ODA6G",
+		"clientID": "ztsgau9zjfoh1975obz8y81o65ayaqyg",
+		"clientSecret": "903acd71-e767-4da5-829c-217771190e09",
+		"status": "success"
+  }
+}
+}

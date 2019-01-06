@@ -1,0 +1,200 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div class="row">
+  <div>
+    <div class="ibox float-e-margins">
+      <div class="ibox-title"><h5>Application list</h5></div>
+      <div class="ibox-content">
+        <table class="table table-hover no-margins">
+          <thead>
+            <tr>
+              <th>AppId</th>
+              <th>AppName</th>
+              <th>AppType</th>
+              <th>API Token</th>
+              <th><i class="fa fa-bars" aria-hidden="true"></i> Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of applications">
+              <td>{{ item.ApplicationID }}</td>
+              <td>{{ item.ApplicationName }}</td>
+              <td>{{ item.ApplicationType }}</td>
+              <td class="text-navy">
+                  <a href="#demo" data-toggle="collapse">show Token</a>
+                  <div id="demo" class="collapse">
+                      {{ item.APIToken }}
+                  </div>
+
+              </td>
+              <td>
+                <button class="btn btn-default " type="button">
+                  <i class="fa fa-refresh"></i> Regenerate
+                </button>
+                <button class="btn btn-default " type="button">
+                  <i class="fa fa-paste"></i> Modify
+                </button>
+                <button class="btn btn-default " type="button">
+                  <i class="fa fa-power-off"></i> Enable/Disable
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button
+          type="button"
+          data-toggle="collapse"
+          data-target="#app-registration"
+          class="btn btn-primary">
+          Regester New
+        </button>
+      </div>
+    </div>
+    <div class="ibox" id="app-registration" class="collapse">
+      <div class="ibox-title"><h5>Application Registration</h5></div>
+      <div class="ibox-content">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="port-name">Application Details</label>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="end-point-url">Auth Details</label>
+          </div>
+        </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="app-type-select">Application Type</label>
+              <select id="app-type-select" [(ngModel)]="application.ApplicationType" class="form-control">
+                <option selected>Choose...</option>
+                <option *ngFor="let c of applicationType" [ngValue]="c">{{c.name}}</option>
+                <option [ngValue]="2">...</option>
+              </select>
+            </div>
+            <div class="form-group col-md-6">
+              <label for="auth-provider-select">Auth Provider</label>
+              <select id="auth-provider-select" [(ngModel)]="application.OAuthDetails.OAuthType"  class="form-control">
+                <option selected>Choose...</option>
+                <option *ngFor="let c of authProviders" [ngValue]="c">{{c.name}}</option>
+                <option [ngValue]="3">...</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="app-name">App Name</label>
+              <input [(ngModel)]="application.ApplicationName"
+                type="text"
+                class="form-control"
+                id="app-name"
+                placeholder="Application Name"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="client-id">Client Id</label>
+              <input
+              [(ngModel)]="application.OAuthDetails.clientId"
+                type="text"
+                class="form-control"
+                id="client-id"
+                placeholder="Client Id"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="host-name">Host Name</label>
+              <input
+              [(ngModel)]="application.ApplicationDetails.hostname"
+                type="text"
+                class="form-control"
+                id="host-name"
+                placeholder="Host Name"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="client-secret">Client Secret</label>
+              <input
+              [(ngModel)]="application.OAuthDetails.clientSecret"
+                type="text"
+                class="form-control"
+                id="client-secret"
+                placeholder="Client Secret"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="port-name">Port Name</label>
+              <input
+              [(ngModel)]="application.ApplicationDetails.port"
+                type="text"
+                class="form-control"
+                id="port-name"
+                placeholder="Port Name"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="end-point-url">End Point URL</label>
+              <input
+              [(ngModel)]="application.OAuthDetails.endPointUrl"
+                type="text"
+                class="form-control"
+                id="end-point-url"
+                placeholder="End Point URL"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="application-admin-id">Application Admin Id</label>
+              <input
+              [(ngModel)]="application.ApplicationDetails.clientId"
+                type="text"
+                class="form-control"
+                id="application-admin-id"
+                placeholder="Application Admin Id"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="auth-admin-id">Auth Provider Admin Id</label>
+              <input
+              [(ngModel)]="application.OAuthDetails.adminID"
+                type="text"
+                class="form-control"
+                id="auth-admin-id"
+                placeholder="Auth Provider Admin Id"
+              />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-6">
+              <label for="application-admin-password">Application Admin Password</label>
+              <input
+              [(ngModel)]="application.ApplicationDetails.password"
+                type="text"
+                class="form-control"
+                id="application-admin-password"
+                placeholder="Application Admin Password"
+              />
+            </div>
+            <div class="form-group col-md-6">
+              <label for="auth-admin-password">Auth Provider Admin Password</label>
+              <input
+              [(ngModel)]="application.OAuthDetails.adminPassword"
+                type="text"
+                class="form-control"
+                id="auth-admin-password"
+                placeholder="Auth Provider Admin Password"
+              />
+            </div>
+          </div>
+          <div style="float:right">
+            <button type="button" class="btn btn-primary" (click)="registerApplication()">Submit</button>
+            <button type="button" class="btn btn-default" data-toggle="collapse"
+            data-target="#app-registration" >Cancel</button>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
