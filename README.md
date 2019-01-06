@@ -1,23 +1,31 @@
 # Admin panel and UI Components for Angular.
 
-Start your own Angular project with ng-dashboard in minutes!
+Start Angular project with a dashboard in minutes!
 
 ## Demo
 
-<a target="_blank" href="https://ddvkid.github.io/ng-dashboard"><img src="./screenshot.png" width="600" alt="Sky Blue"/></a>
-
-<a target="_blank" href="https://ddvkid.github.io/ng-dashboard">Live Demo</a>
+<a target="_blank" href="#"><img src="./screenshot.png" width="600" alt="Sky Blue"/></a>
 
 ## How to start
 
-You will need to clone the source code of ng-dashboard GitHub repository.
+You will need to clone the source code of project GitHub repository.
 
-`git clone https://github.com/ddvkid/ng-bootstrap.git`
+`https://github.com/onkarrajambatwar/dashboardproject.git`
 
 After the repository is cloned, go inside of the repository directory and install dependencies:
 
+#Prerequisites 
 ```
-cd ng-dashboard
+install VS code https://code.visualstudio.com/download
+
+install Node from
+https://nodejs.org/en/download/
+
+install Angular-cli
+npm install -g @angular/cli
+
+cd dashboardproject
 npm install
 npm start
+
 ```
